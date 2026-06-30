@@ -5,20 +5,15 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
     color: white;
-
     background:
-        linear-gradient(rgba(2, 15, 35, 0.82),
-            rgba(2, 15, 35, 0.90)),
+        linear-gradient(rgba(2, 6, 23, 0.78), rgba(2, 6, 23, 0.92)),
         url("../images/background.png");
-
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
-    overflow-x: hidden;
 }
 
 .navbar {
@@ -27,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(2, 6, 23, 0.88);
+    background: rgba(2, 6, 23, 0.85);
     border-bottom: 1px solid rgba(56, 189, 248, 0.35);
 }
 
@@ -88,21 +83,8 @@ body {
 }
 
 .hero h1 {
-
-    font-size: 58px;
-
-    color: white;
-
-    letter-spacing: 2px;
-
-    text-shadow:
-
-        0 0 15px #38bdf8,
-
-        0 0 30px #38bdf8,
-
-        0 0 50px rgba(56, 189, 248, .5);
-
+    font-size: 55px;
+    text-shadow: 0 0 28px rgba(56, 189, 248, 0.7);
 }
 
 .hero p {
@@ -111,24 +93,50 @@ body {
     color: #e0f2fe;
 }
 
+.feature-grid {
+    width: 88%;
+    max-width: 1100px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(2, 20, 38, 0.75);
+    border: 1px solid rgba(125, 211, 252, 0.35);
+    border-radius: 22px;
+    padding: 25px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+}
+
+.feature-card h3 {
+    margin: 15px 0;
+    color: #7dd3fc;
+}
+
+.feature-card p {
+    color: #dbeafe;
+    font-size: 15px;
+}
+
 .glass-card {
     width: 88%;
     max-width: 1100px;
     margin: 35px auto;
-
     padding: 40px;
-
-    background: rgba(8, 20, 45, .55);
-
-    border: 1px solid rgba(255, 255, 255, .18);
-
-    backdrop-filter: blur(18px);
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 0 60px rgba(0, 0, 0, .55),
-        inset 0 0 20px rgba(255, 255, 255, .05);
+    background: rgba(2, 20, 38, 0.78);
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    border-radius: 28px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(14px);
 }
 
 .card-title {
@@ -254,8 +262,27 @@ body {
     background: linear-gradient(90deg, #22c55e, #eab308, #ef4444);
 }
 
+.summary {
+    margin-top: 30px;
+    padding: 22px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    text-align: left;
+}
+
+.summary h3 {
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.summary p {
+    color: #dbeafe;
+    line-height: 1.7;
+}
+
 .recommendation {
-    margin-top: 28px;
+    margin-top: 25px;
     text-align: left;
     background: rgba(15, 23, 42, 0.75);
     padding: 24px;
@@ -263,28 +290,51 @@ body {
 }
 
 .recommendation h3 {
-    color: #7dd3fc;
-    margin-bottom: 13px;
+    color: #38bdf8;
+    margin-bottom: 15px;
 }
 
 .recommendation li {
     margin: 10px 0;
-    color: #e2e8f0;
+    color: #f1f5f9;
 }
 
 .back-btn {
     display: inline-block;
-    margin-top: 28px;
-    padding: 14px 30px;
-    background: #38bdf8;
-    color: #020617;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #0ea5e9;
+    color: white;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 800;
-    border-radius: 14px;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: #0284c7;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 35px;
+    text-align: center;
+    background: rgba(0, 0, 0, .55);
+}
+
+.footer h3 {
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.footer p {
+    color: #dbeafe;
+    margin: 6px;
 }
 
 @media (max-width: 900px) {
-    .form-grid {
+
+    .form-grid,
+    .feature-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -295,7 +345,9 @@ body {
 }
 
 @media (max-width: 600px) {
-    .form-grid {
+
+    .form-grid,
+    .feature-grid {
         grid-template-columns: 1fr;
     }
 
@@ -306,187 +358,4 @@ body {
     .glass-card {
         padding: 24px;
     }
-}
-
-.feature-grid {
-    width: 88%;
-    max-width: 1100px;
-    margin: 25px auto;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.feature-card {
-
-    background: rgba(255, 255, 255, .08);
-
-    backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, .15);
-
-    border-radius: 22px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    transition: .35s;
-
-}
-
-.feature-card:hover {
-
-    transform: translateY(-10px);
-
-    box-shadow: 0 0 35px rgba(56, 189, 248, .45);
-
-}
-
-.feature-card h3 {
-
-    margin: 15px 0;
-
-    color: #7dd3fc;
-
-}
-
-.feature-card p {
-
-    color: #dbeafe;
-
-    font-size: 15px;
-
-}
-
-@media(max-width:900px) {
-
-    .feature-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .feature-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-.footer {
-
-    margin-top: 50px;
-
-    padding: 35px;
-
-    text-align: center;
-
-    background: rgba(0, 0, 0, .55);
-
-}
-
-.footer h3 {
-
-    color: #38bdf8;
-
-    margin-bottom: 12px;
-
-}
-
-.footer p {
-
-    color: #dbeafe;
-
-    margin: 6px;
-
-}
-
-.summary {
-
-    margin-top: 30px;
-
-    padding: 22px;
-
-    background: rgba(255, 255, 255, .08);
-
-    border-radius: 18px;
-
-    border: 1px solid rgba(255, 255, 255, .12);
-
-    text-align: left;
-
-}
-
-.summary h3 {
-
-    color: #38bdf8;
-
-    margin-bottom: 12px;
-
-}
-
-.summary p {
-
-    color: #dbeafe;
-
-    line-height: 1.7;
-
-}
-
-.recommendation {
-
-    margin-top: 25px;
-
-}
-
-.recommendation h3 {
-
-    color: #38bdf8;
-
-    margin-bottom: 15px;
-
-}
-
-.recommendation li {
-
-    margin: 10px 0;
-
-    color: #f1f5f9;
-
-}
-
-.back-btn {
-
-    display: inline-block;
-
-    margin-top: 30px;
-
-    padding: 15px 30px;
-
-    background: #0ea5e9;
-
-    color: white;
-
-    border-radius: 12px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: .3s;
-
-}
-
-.back-btn:hover {
-
-    background: #0284c7;
-
 }
